@@ -17,8 +17,12 @@ class ViewController: UIViewController {
         selectSort();
         
         self.view.backgroundColor = UIColor.red
+        
+        var array:[Int] = [4,2,7,8,5,1,9,6,3];
+        quickSort(a: &array, low: 0, high: array.count-1);
+        print(array);
     }
-
+    //冒泡排序
     func bubbleSort() -> Void {
         var array:[Int32] = [4,2,7,8,5,1,9,6,3];
         for index in (1..<array.count).reversed() {
@@ -34,7 +38,7 @@ class ViewController: UIViewController {
         }
         print(array);
     }
-    
+    //选择排序
     func selectSort() -> Void {
         var array:[Int32] = [4,2,7,8,5,1,9,6,3];
         for i in (1..<array.count).reversed() {
@@ -49,6 +53,29 @@ class ViewController: UIViewController {
             array[max] = tmp;
         }
         print(array)
+    }
+    //快速排序
+    func quickSort(a :inout [Int],low : Int,high:Int) -> Void {
+        if low >= high {
+            return;
+        }
+        let key:Int = a[low];
+        var i : Int = low;
+        var j : Int = high;
+        
+        while i < j {
+            while i < j && key < a[j] {
+                j -= 1;
+            }
+            a[i] = a[j];
+            while i < j && key > a[i] {
+                i += 1;
+            }
+            a[j] = a[i];
+        }
+        a[i] = key;
+        quickSort(a: &a, low: low, high: i-1);
+        quickSort(a: &a, low: i+1, high: high);
     }
 }
 
