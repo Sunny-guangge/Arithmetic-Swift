@@ -77,5 +77,12 @@ class ViewController: UIViewController {
         quickSort(a: &a, low: low, high: i-1);
         quickSort(a: &a, low: i+1, high: high);
     }
+    
+    //左边奇数 右边偶数
+    func jishuoushu(a : inout [Int],low:Int,high:Int) -> Void {
+        
+        
+        
+    }
 }
 
