@@ -19,7 +19,10 @@ class ViewController: UIViewController {
         self.view.backgroundColor = UIColor.red
         
         var array:[Int] = [4,2,7,8,5,1,9,6,3];
-        quickSort(a: &array, low: 0, high: array.count-1);
+//        quickSort(a: &array, low: 0, high: array.count-1);
+        
+        jishuoushu(a: &array, low: 0, high: array.count - 1);
+        
         print(array);
     }
     //冒泡排序
@@ -64,11 +67,11 @@ class ViewController: UIViewController {
         var j : Int = high;
         
         while i < j {
-            while i < j && key < a[j] {
+            while key < a[j] {
                 j -= 1;
             }
             a[i] = a[j];
-            while i < j && key > a[i] {
+            while key > a[i] {
                 i += 1;
             }
             a[j] = a[i];
@@ -80,9 +83,24 @@ class ViewController: UIViewController {
     
     //左边奇数 右边偶数
     func jishuoushu(a : inout [Int],low:Int,high:Int) -> Void {
-        
-        
-        
+        if low > high {
+            return;
+        }
+        var l:Int = low;
+        var h:Int = high;
+        while l < h {
+            while a[l] % 2 == 1 {
+                l += 1;
+            }
+            while a[h] % 2 == 0 {
+                h -= 1;
+            }
+            let tmp : Int = a[l];
+            a[l] = a[h];
+            a[h] = tmp;
+            l += 1;
+            h -= 1;
+        }
     }
 }
 
