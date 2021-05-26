@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//二叉树
 class TreeNode: NSObject {
     public var value : Int;
     public var left : TreeNode?;
@@ -33,7 +33,5 @@ class TreeNode: NSObject {
                 stack.append(node.left!);
             }
         }
-        
-        
     }
 }

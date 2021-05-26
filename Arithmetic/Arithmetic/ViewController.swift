@@ -13,17 +13,45 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        bubbleSort();
-        selectSort();
+//        bubbleSort();
+//        selectSort();
         
         self.view.backgroundColor = UIColor.red
         
-        var array:[Int] = [4,2,7,8,5,1,9,6,3];
+//        var array:[Int] = [4,2,7,8,5,1,9,6,3];
 //        quickSort(a: &array, low: 0, high: array.count-1);
         
-        jishuoushu(a: &array, low: 0, high: array.count - 1);
+//        jishuoushu(a: &array, low: 0, high: array.count - 1);
+//
+//        print(array);
         
-        print(array);
+        let global = DispatchQueue.global();
+        let serial = DispatchQueue.init(label: "自定义队列");
+        global.async {
+            print(001112222233);
+            print(Thread.current);
+            
+            serial.async {
+                print(222222222);
+                print(Thread.current)
+            }
+            
+            serial.sync {
+                sleep(3);
+                print(11111111);
+                print(Thread.current);
+            }
+        }
+        global.sync {
+            print(333333333);
+            print(Thread.current);
+            
+            serial.sync {
+                sleep(3);
+                print(44444444);
+                print(Thread.current);
+            }
+        }
     }
     //冒泡排序
     func bubbleSort() -> Void {
@@ -100,6 +128,16 @@ class ViewController: UIViewController {
             a[h] = tmp;
             l += 1;
             h -= 1;
+        }
+    }
+    
+    //连续子数组的最大和
+    func maxSum(array : inout [Int]) -> Void {
+        var max:Int = array[0];
+        for i in 1...array.count-1 {
+            
+            
+            
         }
     }
 }
