@@ -16,6 +16,21 @@ class ViewController: UIViewController {
 //        bubbleSort();
 //        selectSort();
         
+        let l1 = ListNode(2);
+        l1.next = ListNode(4);
+        l1.next?.next = ListNode(6);
+        
+        let l2 = ListNode(4);
+        l2.next = ListNode(5);
+        l2.next?.next = ListNode(2);
+        
+        
+        let result = ListNode.addTwoNum(l1: l1, l2: l2);
+        
+        let reverse = ListNode.transfer(l: l1);
+        
+        
+        
         self.view.backgroundColor = UIColor.red
         
 //        var array:[Int] = [4,2,7,8,5,1,9,6,3];

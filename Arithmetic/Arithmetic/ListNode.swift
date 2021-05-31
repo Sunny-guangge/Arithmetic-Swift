@@ -11,7 +11,7 @@ class ListNode: NSObject {
     var value:Int;
     var next:ListNode?;
     
-    init(value:Int) {
+    init(_ value:Int) {
         self.value = value;
         self.next = nil;
     }
@@ -33,5 +33,47 @@ class ListNode: NSObject {
     }
     
     //链表反转
+    static func transfer(l:ListNode?) -> ListNode? {
+        if l == nil {
+            return l;
+        }
+        if l?.next == nil {
+            return l;
+        }
+        let reverseNode = transfer(l: l?.next);
+        l?.next?.next = l;
+        l?.next = nil;
+        return reverseNode;
+    }
     
+    //链表翻转  非递归
+    static func reverse(l:ListNode?) -> ListNode? {
+        
+        
+        return l;
+    }
+    
+    //求两个链表的和
+    class func addTwoNum(l1:ListNode?,l2:ListNode?) -> ListNode? {
+        var result:ListNode?;
+        var current:ListNode?;
+        var left:ListNode? = l1;
+        var right:ListNode? = l2;
+        var carry = 0;
+        while left != nil || right != nil || carry != 0 {
+            let node = ListNode(0);
+            if result == nil {
+                result = node;
+            }else {
+                current?.next = node;
+            }
+            let sum = (left?.value ?? 0) + (right?.value ?? 0) + carry;
+            carry = sum / 10;
+            node.value = sum % 10;
+            left = left?.next;
+            right = right?.next;
+            current = node;
+        }
+        return result;
+    }
 }
