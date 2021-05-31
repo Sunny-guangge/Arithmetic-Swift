@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         
         let reverse = ListNode.transfer(l: l1);
         
+        let aaa = ListNode.reverse(l: l2);
         
         
         self.view.backgroundColor = UIColor.red
@@ -147,13 +148,16 @@ class ViewController: UIViewController {
     }
     
     //连续子数组的最大和
-    func maxSum(array : inout [Int]) -> Void {
+    func maxSum(array : inout [Int]) -> Int {
         var max:Int = array[0];
         for i in 1...array.count-1 {
-            
-            
-            
+            let former : Int = array[i-1] > 0 ? array[i - 1] : 0;
+            array[i] += former;
+            if max < array[i] {
+                max = array[i];
+            }
         }
+        return max;
     }
 }
 

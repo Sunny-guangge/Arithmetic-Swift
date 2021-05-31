@@ -48,9 +48,15 @@ class ListNode: NSObject {
     
     //链表翻转  非递归
     static func reverse(l:ListNode?) -> ListNode? {
-        
-        
-        return l;
+        var newHead:ListNode?;
+        var head:ListNode? = l;
+        while head != nil {
+            let tmp : ListNode? = head?.next;
+            head?.next = newHead;
+            newHead = head;
+            head = tmp;
+        }
+        return newHead;
     }
     
     //求两个链表的和
