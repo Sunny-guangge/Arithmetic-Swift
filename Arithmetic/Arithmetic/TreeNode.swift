@@ -34,4 +34,24 @@ class TreeNode: NSObject {
             }
         }
     }
+    
+    //二叉树的广度优先遍历
+    func guangduBianli(tree:TreeNode?) -> Void {
+        if tree == nil {
+            return;
+        }
+        var data:[Int] = [Int]();
+        var stack : [TreeNode] = [TreeNode]();
+        stack.append(tree!);
+        while !stack.isEmpty {
+            let node = stack.first;
+            data.append(node!.value);
+            if tree?.left != nil {
+                stack.append((tree?.left)!);
+            }
+            if tree?.right != nil {
+                stack.append((tree?.right)!);
+            }
+        }
+    }
 }

@@ -101,4 +101,20 @@ class ListNode: NSObject {
         }
         return left;
     }
+    //判断链表是否是环型链表
+    static func judgeIsCircle(l:ListNode) -> Bool {
+        if l == nil || l.next == nil{
+            return false;
+        }
+        var slow : ListNode? = l;
+        var fast : ListNode? = l;
+        while slow !== fast {
+            if fast == nil || fast?.next == nil {
+                return false;
+            }
+            fast = fast?.next?.next;
+            slow = slow?.next;
+        }
+        return true;
+    }
 }
