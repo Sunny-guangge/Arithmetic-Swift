@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//链表
 class ListNode: NSObject {
     var value:Int;
     var next:ListNode?;
@@ -81,5 +81,24 @@ class ListNode: NSObject {
             current = node;
         }
         return result;
+    }
+    
+    //两个链表相交的结点  用快慢指针
+    static func centerNode(l1:ListNode?,l2:ListNode?) -> ListNode? {
+        var left:ListNode? = l1;
+        var right:ListNode? = l2;
+        while left != right {
+            if left?.next == nil {
+                left?.next = l2;
+            }else {
+                left = left?.next;
+            }
+            if right?.next == nil {
+                right?.next = l1;
+            }else {
+                right = right?.next;
+            }
+        }
+        return left;
     }
 }

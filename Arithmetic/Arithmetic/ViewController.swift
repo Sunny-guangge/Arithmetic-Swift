@@ -16,6 +16,10 @@ class ViewController: UIViewController {
 //        bubbleSort();
 //        selectSort();
         
+        Dispatch.dispatchGroup();
+        
+        Dispatch.message();
+        
         let l1 = ListNode(2);
         l1.next = ListNode(4);
         l1.next?.next = ListNode(6);
@@ -40,7 +44,7 @@ class ViewController: UIViewController {
 //        jishuoushu(a: &array, low: 0, high: array.count - 1);
 //
 //        print(array);
-        
+        /*
         let global = DispatchQueue.global();
         let serial = DispatchQueue.init(label: "自定义队列");
         global.async {
@@ -68,6 +72,7 @@ class ViewController: UIViewController {
                 print(Thread.current);
             }
         }
+ */
     }
     //冒泡排序
     func bubbleSort() -> Void {

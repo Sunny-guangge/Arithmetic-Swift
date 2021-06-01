@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F43EFFE2665FE6D00A3A989 /* Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F43EFFD2665FE6D00A3A989 /* Dispatch.swift */; };
 		4F59C85D26592F8F0079AA60 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F59C85C26592F8F0079AA60 /* TreeNode.swift */; };
 		4F59F030265BDA0E0079AA60 /* ListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F59F02F265BDA0E0079AA60 /* ListNode.swift */; };
 		A3C1FB34265484F600417458 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C1FB33265484F600417458 /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F43EFFD2665FE6D00A3A989 /* Dispatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Dispatch.swift; path = ../../../../Dispatch.swift; sourceTree = "<group>"; };
 		4F59C85C26592F8F0079AA60 /* TreeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeNode.swift; sourceTree = "<group>"; };
 		4F59F02F265BDA0E0079AA60 /* ListNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNode.swift; sourceTree = "<group>"; };
 		A3C1FB30265484F600417458 /* Arithmetic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arithmetic.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +111,7 @@
 				A3C1FB35265484F600417458 /* SceneDelegate.swift */,
 				A3C1FB37265484F600417458 /* ViewController.swift */,
 				A3C1FB6E26548F5400417458 /* Sort.swift */,
+				4F43EFFD2665FE6D00A3A989 /* Dispatch.swift */,
 				4F59C85C26592F8F0079AA60 /* TreeNode.swift */,
 				4F59F02F265BDA0E0079AA60 /* ListNode.swift */,
 				A3C1FB39265484F600417458 /* Main.storyboard */,
@@ -273,6 +276,7 @@
 				4F59C85D26592F8F0079AA60 /* TreeNode.swift in Sources */,
 				A3C1FB36265484F600417458 /* SceneDelegate.swift in Sources */,
 				4F59F030265BDA0E0079AA60 /* ListNode.swift in Sources */,
+				4F43EFFE2665FE6D00A3A989 /* Dispatch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
